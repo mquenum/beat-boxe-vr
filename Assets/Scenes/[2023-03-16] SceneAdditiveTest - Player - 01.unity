@@ -227,6 +227,10 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 512419326}
+    - target: {fileID: 702785924, guid: 872b1ae3c534c444db0acafca7ed05e5, type: 3}
+      propertyPath: m_ModelPrefab
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 799074190, guid: 872b1ae3c534c444db0acafca7ed05e5, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -234,6 +238,18 @@ PrefabInstance:
     - target: {fileID: 1475262757, guid: 872b1ae3c534c444db0acafca7ed05e5, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1475262760, guid: 872b1ae3c534c444db0acafca7ed05e5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1475262761, guid: 872b1ae3c534c444db0acafca7ed05e5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1475262762, guid: 872b1ae3c534c444db0acafca7ed05e5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1820122780, guid: 872b1ae3c534c444db0acafca7ed05e5, type: 3}
       propertyPath: m_Layer
@@ -247,6 +263,10 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 512419326}
+    - target: {fileID: 1820122785, guid: 872b1ae3c534c444db0acafca7ed05e5, type: 3}
+      propertyPath: m_ModelPrefab
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2101128265983727442, guid: 872b1ae3c534c444db0acafca7ed05e5,
         type: 3}
       propertyPath: m_Layer
@@ -314,6 +334,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3048264856229247708, guid: 872b1ae3c534c444db0acafca7ed05e5,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048264856229247708, guid: 872b1ae3c534c444db0acafca7ed05e5,
+        type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -321,6 +346,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3048264857816143632, guid: 872b1ae3c534c444db0acafca7ed05e5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3048264857816143632, guid: 872b1ae3c534c444db0acafca7ed05e5,
         type: 3}

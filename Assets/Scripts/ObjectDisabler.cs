@@ -24,8 +24,8 @@ public class ObjectDisabler : MonoBehaviour
                 _collisionObjectRb.velocity = Vector3.zero;
                 _collisionObjectRb.isKinematic = true;
                 // reset the position
-                _collisionObject.transform.localPosition = ObjectSpawner.InitialTransform;
-                _collisionObject.transform.rotation = ObjectSpawner.InitialRotation;
+                /*_collisionObject.transform.localPosition = ObjectSpawner.InitialTransform;
+                _collisionObject.transform.rotation = ObjectSpawner.InitialRotation;*/
             /*}*/
         }
     }
