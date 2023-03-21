@@ -15,8 +15,8 @@ public class ObjectDisabler : MonoBehaviour
         if (_collisionObject.CompareTag("Opponent"))
         {
             // if this GameObject has a "Boundary" tag
-            if (gameObject.CompareTag("Boundary"))
-            {
+            /*if (gameObject.CompareTag("Boundary"))
+            {*/
                 _collisionObjectRb = _collisionObject.GetComponent<Rigidbody>();
                 // disable the collision object
                 _collisionObject.SetActive(false);
@@ -24,9 +24,9 @@ public class ObjectDisabler : MonoBehaviour
                 _collisionObjectRb.velocity = Vector3.zero;
                 _collisionObjectRb.isKinematic = true;
                 // reset the position
-                _collisionObject.transform.localPosition = Vector3.zero;
-                _collisionObject.transform.rotation = Quaternion.identity;
-            }
+                /*_collisionObject.transform.localPosition = ObjectSpawner.InitialTransform;
+                _collisionObject.transform.rotation = ObjectSpawner.InitialRotation;*/
+            /*}*/
         }
     }
 }
