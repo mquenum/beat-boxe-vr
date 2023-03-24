@@ -6,14 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/[2023-03-16] SceneAdditiveTest - Main - 00.unity
+    path: Assets/Scenes/01-LevelOne - Main.unity
     guid: a29be476c9352fe4081ee1689938c694
   - enabled: 1
-    path: Assets/Scenes/[2023-03-16] SceneAdditiveTest - Player - 01.unity
+    path: Assets/Scenes/01-LevelOne - Environnement.unity
+    guid: b8595e7458cb0be46bdf0112e4f28d01
+  - enabled: 1
+    path: Assets/Scenes/01-LevelOne - Light.unity
+    guid: 5200df8543d138f44a1526e8b3b0e730
+  - enabled: 1
+    path: Assets/Scenes/01-LevelOne - Player.unity
     guid: 1a95f5c4270edd148a037d20041e7ec2
-  - enabled: 0
-    path: Assets/Scenes/[2023-03-16] SceneAdditiveTest - Spawner - 02.unity
+  - enabled: 1
+    path: Assets/Scenes/01-LevelOne - Pool-Spawner.unity
     guid: d68c8159f2740bc47b832e75b48ce33e
+  - enabled: 0
+    path: Assets/Scenes/01-LevelOne - UI.unity
+    guid: 24e835f97ecb747408e8ec6c20ecde20
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 6ecf28bfc5a06e54dacaf4c4b68c9e2b,
       type: 2}

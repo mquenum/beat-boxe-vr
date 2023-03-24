@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ObjectDisabler : MonoBehaviour
@@ -10,23 +11,20 @@ public class ObjectDisabler : MonoBehaviour
     // using OnCollisionEnter for now
     private void OnCollisionEnter(Collision collision)
     {
+        // move to spawner 
+        int layer = gameObject.layer;
+
         _collisionObject = collision.gameObject;
-        // if the collision object has an "Opponent" tag
-        if (_collisionObject.CompareTag("Opponent"))
+        
+        // if the collision object is on the "Opponent" layer
+        if (LayerMask.LayerToName(layer) == "Opponent")
         {
-            // if this GameObject has a "Boundary" tag
-            /*if (gameObject.CompareTag("Boundary"))
-            {*/
-                _collisionObjectRb = _collisionObject.GetComponent<Rigidbody>();
-                // disable the collision object
-                _collisionObject.SetActive(false);
-                // reset the rigidbody parameters
-                _collisionObjectRb.velocity = Vector3.zero;
-                _collisionObjectRb.isKinematic = true;
-                // reset the position
-                /*_collisionObject.transform.localPosition = ObjectSpawner.InitialTransform;
-                _collisionObject.transform.rotation = ObjectSpawner.InitialRotation;*/
-            /*}*/
+            _collisionObjectRb = _collisionObject.GetComponent<Rigidbody>();
+            // disable the collision object
+            _collisionObject.SetActive(false);
+            // reset the rigidbody parameters
+            _collisionObjectRb.velocity = Vector3.zero;
+            _collisionObjectRb.isKinematic = true;
         }
     }
 }

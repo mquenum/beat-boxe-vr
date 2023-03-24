@@ -278,7 +278,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374246443}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -345,27 +345,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1694076929}
-  - component: {fileID: 1694076928}
+  - component: {fileID: 1694076930}
   m_Layer: 0
-  m_Name: SceneBuilder
+  m_Name: SceneLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1694076928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1694076927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99551db90aa66a94082d1b79ea548c07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scenes: []
 --- !u!4 &1694076929
 Transform:
   m_ObjectHideFlags: 0
@@ -381,6 +368,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1694076930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694076927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b78d4bd251593de4c8e97e3c1fd9e7b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _requiredSceneBuildIndex: 01000000020000000300000004000000
 --- !u!1001 &1867059999
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -17,8 +17,12 @@ public class ObjectController : MonoBehaviour
 
     void OnEnable()
     {
+        Debug.Log(gameObject.CompareTag("RotatingOpponent"));
         // random rotation of GameObject 
-        gameObject.transform.Rotate(transform.forward, 90 * Random.Range(0, 4));
+        if (gameObject.CompareTag("RotatingOpponent"))
+        {
+            gameObject.transform.Rotate(transform.forward, 90 * Random.Range(0, 4));
+        }
     }
 
     private void Update()

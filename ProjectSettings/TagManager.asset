@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Opponent
   - Boundary
+  - RotatingOpponent
   layers:
   - Default
   - TransparentFX

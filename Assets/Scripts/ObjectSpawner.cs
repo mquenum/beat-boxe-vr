@@ -5,48 +5,59 @@ using UnityEngine.UI;
 
 public class ObjectSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject _objectToSpawn;
+    [SerializeField] private List<GameObject> _objectToSpawn;
     [SerializeField] private int _amountToSpawn;
     [SerializeField] private List<Transform> _lanes;
-    [Range(60, 255)]
-    [SerializeField] private int _bpm;
+    /*[Range(60, 255)]
+    [SerializeField] private int _bpm = 120;*/
     private List<GameObject> _pool;
     private float _timer = 0;
     private int _maxLaneNb;
-    private float _beat;
+    /*private float _beat;*/
 
-    void Start()
+    private void Awake()
     {
-        _beat = (60 / _bpm) * 2;
+        // instatiate here
+        /*_beat = (60 / _bpm) * 2;*/
         _maxLaneNb = _lanes.Count;
         int _selectLane = Random.Range(0, _maxLaneNb);
 
         // get the pool from the ObjectPooler
+        // create multiple pools each for every object
         _pool = ObjectPooler.SharedInstance.PooledObjects;
 
         for (int i = 0; i < _amountToSpawn; i++)
         {
-            // instantiate object in variable
-            GameObject obj = Instantiate(_objectToSpawn, _lanes[_selectLane].transform.position, _lanes[_selectLane].transform.rotation);
+            foreach (GameObject spawnedObj in _objectToSpawn)
+            {
+                // instantiate object in variable
+                GameObject obj = Instantiate(spawnedObj, _lanes[_selectLane].transform.position, _lanes[_selectLane].transform.rotation);
 
-            obj.transform.SetParent(transform);
+                obj.transform.SetParent(transform);
 
-            // deactivate object
-            obj.SetActive(false);
-            // add object to the pool
-            _pool.Add(obj);
+                // deactivate object
+                obj.SetActive(false);
+                // add object to the pool
+                _pool.Add(obj);
+            }
         }
 
         ActivatePooledObj();
     }
 
+    void Start()
+    {
+        
+    }
+
     private void Update()
     {
 
-        if (_timer > _beat)
+        if (_timer > 5.0f)
         {
             ActivatePooledObj();
-            _timer -= _beat;
+            // _timer -= _beat;
+            _timer = 0;
         }
         _timer += Time.deltaTime;
     }
