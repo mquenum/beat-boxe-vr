@@ -6,32 +6,30 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class ObjectController : MonoBehaviour
 {
-    [SerializeField] private float _force = 10.0f;
+    [SerializeField] private float _force = 1.0f;
     private Rigidbody _rb;
-
-    private void Start()
-    {
-        _rb = GetComponent<Rigidbody>();
-        _rb.isKinematic = true;
-    }
+    private bool _isActive = false;
 
     void OnEnable()
     {
-        Debug.Log(gameObject.CompareTag("RotatingOpponent"));
-        // random rotation of GameObject 
-        if (gameObject.CompareTag("RotatingOpponent"))
+        if (_isActive)
         {
-            gameObject.transform.Rotate(transform.forward, 90 * Random.Range(0, 4));
+            _rb = gameObject.GetComponent<Rigidbody>();
+            _rb.isKinematic = false;
+            StartCoroutine(MoveForward(_rb));
+        }
+        else
+        {
+            _isActive = true;
         }
     }
 
-    private void Update()
+    IEnumerator MoveForward(Rigidbody rb)
     {
-        if (gameObject.activeSelf)
+        while (true)
         {
-            // set isKinematic to false and push the rigidBody forward
-            _rb.isKinematic = false;
-            _rb.AddForce(transform.forward * _force);
+            rb.AddForce(0, 0, _force*-1);
+            yield return null;
         }
     }
 }
