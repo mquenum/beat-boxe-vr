@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
 
 public class CollisionManager : MonoBehaviour
 {
     private ObjectSpawner _spawner;
-    private PlayerPositionManager _playerPosition;
+    private PlayerCounterManager _playerCounter;
     public float DistanceToCenter;
     public static CollisionManager SharedInstance;
 
@@ -26,9 +25,6 @@ public class CollisionManager : MonoBehaviour
         // Get the layer name from the layer mask
         string layerName = LayerMask.LayerToName(layer);
 
-        // Print the layer name to the console
-        Debug.Log("Layer name: " + layerName);
-
         if (layerName == "Opponent")
         {
             TypeInducedBehaviour(collision.gameObject);
@@ -39,25 +35,16 @@ public class CollisionManager : MonoBehaviour
 
     private void TypeInducedBehaviour(GameObject collision)
     {
-        string tag = collision.gameObject.tag;
-
-        switch (tag)
+        switch (collision.gameObject.tag)
         {
             case "Punch":
                 Debug.Log("You punch !");
                 break;
             case "Dodge":
-                float distanceBetweenPoints = Vector3.Distance(_playerPosition.GetHeadsetPosition(), collision.transform.position);
-
-                Debug.Log(distanceBetweenPoints);
-                
-                if (distanceBetweenPoints >= 1.0f)
-                {
-                    _playerPosition.GetHeadsetPosition();
-                }
+                Debug.Log("Didn't dodge");
                 break;
             case "Counter":
-                if (_playerPosition._hasCounterPosition)
+                if (_playerCounter._hasCounterPosition)
                 {
                     Debug.Log("Counter !");
                 }

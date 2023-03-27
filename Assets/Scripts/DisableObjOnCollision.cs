@@ -6,6 +6,11 @@ public class DisableObjOnCollision : MonoBehaviour
 {
     private ObjectSpawner _spawner;
 
+    private void Start()
+    {
+        _spawner = ObjectSpawner.SharedInstance;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         int layer = collision.gameObject.layer;
@@ -13,7 +18,7 @@ public class DisableObjOnCollision : MonoBehaviour
         string layerName = LayerMask.LayerToName(layer);
         if (layerName == "Opponent")
         {
-            DisableObj(collision.gameObject);
+            _spawner.ResetObj(collision.gameObject);
         }
     }
 

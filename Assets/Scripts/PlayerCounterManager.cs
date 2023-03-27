@@ -3,21 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 
-public class PlayerPositionManager : MonoBehaviour
+public class PlayerCounterManager : MonoBehaviour
 {
     [SerializeField] private GameObject _rightHand;
+    [SerializeField] private GameObject _camera;
     public bool _hasCounterPosition = false;
-    public Vector3 _headsetPosition;
-    public static PlayerPositionManager SharedInstance;
+    public static PlayerCounterManager SharedInstance;
 
     private void Awake()
     {
         SharedInstance = this;
-    }
-
-    public Vector3 GetHeadsetPosition()
-    {
-        return InputTracking.GetLocalPosition(XRNode.Head);
     }
 
     void OnTriggerEnter(Collider other)
@@ -25,7 +20,7 @@ public class PlayerPositionManager : MonoBehaviour
         if (other.gameObject == _rightHand)
         {
             _hasCounterPosition = true;
-            Debug.Log("Counter !");
+            //Debug.Log("Counter !");
         }
     }
 
@@ -34,8 +29,9 @@ public class PlayerPositionManager : MonoBehaviour
         if (other.gameObject == _rightHand)
         {
             _hasCounterPosition = false;
-            Debug.Log("No counter !");
+            //Debug.Log("No counter !");
         }
     }
 
 }
+        
