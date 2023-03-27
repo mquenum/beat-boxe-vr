@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 6965161386292018726}
   m_Layer: 7
   m_Name: ObstacleFront
-  m_TagString: Opponent
+  m_TagString: Punch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68cd08d8345b10a4186890c59a43b581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _force: 5
+  _force: 1
 --- !u!65 &6965161386292018726
 BoxCollider:
   m_ObjectHideFlags: 0

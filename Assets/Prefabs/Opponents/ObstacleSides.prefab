@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 6965161386292018726}
   m_Layer: 7
   m_Name: ObstacleSides
-  m_TagString: Opponent
+  m_TagString: Punch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

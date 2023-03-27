@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1072536017025618408}
   - component: {fileID: 1072536017025618411}
   - component: {fileID: 1072536017025618405}
-  - component: {fileID: 1072536017025618409}
+  - component: {fileID: 556560605809209827}
   m_Layer: 0
   m_Name: Boundary
   m_TagString: Boundary
@@ -55,7 +55,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1072536017025618409
+--- !u!114 &556560605809209827
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,6 +64,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1072536017025618404}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6542a1d3764db44a9d1cd911b00b7fd, type: 3}
+  m_Script: {fileID: 11500000, guid: df9d0fb92dcddb64d9104b4498ebf06a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

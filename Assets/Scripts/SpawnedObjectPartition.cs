@@ -18,12 +18,30 @@ public class SpawnedObjectPartition : MonoBehaviour
         _pools = ObjectPooler.SharedInstance;
     }
 
+
+    private List<GameObject> GetRandomPool(int index)
+    {
+        switch (index)
+        {
+            case 0:
+                return _pools.PooledObstacles;
+            case 1:
+                return _pools.PooledObstaclesDirect;
+            case 2:
+                return _pools.PooledDodges;
+            case 3:
+                return _pools.PooledCounter;
+        }
+        return null;
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (_timer > _beat)
         {
-            _spawner.Spawn(_lanes[Random.Range(0,3)], _pools.PooledObstaclesDirect, Quaternion.Euler(0, 0, 0));
+            /*_spawner.Spawn(_lanes[Random.Range(0, 3)], GetRandomPool(Random.Range(0, 4)), Quaternion.Euler(0, 0, 0));*/
+            _spawner.Spawn(_lanes[1], _pools.PooledDodges, Quaternion.Euler(0, 0, 0));
             _timer -= _beat;
         }
 

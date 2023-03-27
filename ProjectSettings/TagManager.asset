@@ -6,7 +6,10 @@ TagManager:
   tags:
   - Opponent
   - Boundary
-  - RotatingOpponent
+  - Punch
+  - Dodge
+  - Counter
+  - CounterDetect
   layers:
   - Default
   - TransparentFX
@@ -16,7 +19,7 @@ TagManager:
   - UI
   - Player
   - Opponent
-  - 
+  - CounterDetection
   - 
   - 
   - 
