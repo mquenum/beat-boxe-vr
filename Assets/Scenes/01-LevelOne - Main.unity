@@ -508,7 +508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78d4bd251593de4c8e97e3c1fd9e7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _requiredSceneBuildIndex: 01000000020000000300000004000000
+  _requiredSceneBuildIndex: 010000000200000004000000
 --- !u!1001 &1867059999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -520,6 +520,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Boundary
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072536017025618404, guid: ce95e994a0274a746baf7901553768b0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1072536017025618408, guid: ce95e994a0274a746baf7901553768b0,
         type: 3}

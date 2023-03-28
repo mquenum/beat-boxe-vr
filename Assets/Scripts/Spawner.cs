@@ -1,22 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class ObjectSpawner : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
-    private ObjectPooler _objectPooler;
-    public static ObjectSpawner SharedInstance;
+    [SerializeField] private List<Pooler> _poolers;
+    private Pooler _pooler;
+    public List<Pooler> Poolers { get { return _poolers; } }
 
-    private void Awake()
+    private void Start()
     {
-        SharedInstance = this;
-        _objectPooler = ObjectPooler.SharedInstance;
+        _pooler = Pooler.SharedInstance;
     }
 
     public void Spawn(Transform lane, List<GameObject> requiredPool, Quaternion rotation)
     {
-        GameObject obj = _objectPooler.GetPooledObject(requiredPool);
+        GameObject obj = _pooler.GetPooledObject(requiredPool);
 
         obj.transform.position = lane.position;
         obj.transform.rotation = rotation;

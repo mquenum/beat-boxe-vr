@@ -6,7 +6,6 @@ using UnityEngine.XR;
 public class PlayerCounterManager : MonoBehaviour
 {
     [SerializeField] private GameObject _rightHand;
-    [SerializeField] private GameObject _camera;
     public bool _hasCounterPosition = false;
     public static PlayerCounterManager SharedInstance;
 
