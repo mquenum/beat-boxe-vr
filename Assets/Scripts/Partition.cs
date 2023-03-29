@@ -19,7 +19,7 @@ public class Partition : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _beat = (60 / _BPM) * 2;
+        _beat = (60 / _BPM) * 3;
         _directPunchesPool = _spawner.Poolers[0];
         _sidePunchesPool = _spawner.Poolers[1];
         _countersPool = _spawner.Poolers[2];
@@ -37,7 +37,7 @@ public class Partition : MonoBehaviour
         if (_timer > _beat)
         {
             int rotationVal;
-            /*switch (_count)
+            switch (_count)
             {
                 case 0:
                     _spawner.Spawn(_lanes[Random.Range(0, 3)], _directPunchesPool.Pool, Quaternion.Euler(270, 0, 0));
@@ -54,10 +54,11 @@ public class Partition : MonoBehaviour
                     _spawner.Spawn(_lanes[1], _countersPool.Pool, Quaternion.Euler(0, 0, 0));
                     break;
             }
-            if (_count < 3) { _count++; } else { _count = 0; };*/
+            if (_count < 3) { _count++; } else { _count = 0; };
 
+            /* FOR TESTING PURPOSES *//*
             rotationVal = RandomRotation(Random.Range(1, 4), 90);
-            _spawner.Spawn(_lanes[Random.Range(0, 3)], _sidePunchesPool.Pool, Quaternion.Euler(0, 0, rotationVal));
+            _spawner.Spawn(_lanes[Random.Range(0, 3)], _directPunchesPool.Pool, Quaternion.Euler(270, 0, 0));*/
 
             _timer -= _beat;
         }

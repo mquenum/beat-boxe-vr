@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.Burst.Intrinsics;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
@@ -34,7 +33,7 @@ public class ScoreManager : MonoBehaviour
     }
 
     // add points
-    public void ScoreUp(int point)
+    public void ScoreUp(int point, bool isPerfect)
     {
         _hitCounter++;
         _combo++;

@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class PunchManager : MonoBehaviour
@@ -11,12 +9,18 @@ public class PunchManager : MonoBehaviour
     [SerializeField] private PlayerCounterManager _playerCounter;
     [SerializeField] private XRInteractorLineVisual _handInteractorLineVisual;
     private Vector3 _previousPosition;
+    private ScoreManager _scoreManager;
     public float DistanceToCenter;
     public static PunchManager SharedInstance;
 
     private void Awake()
     {
         SharedInstance = this;
+    }
+
+    private void Start()
+    {
+        _scoreManager = ScoreManager.SharedInstance;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -26,12 +30,11 @@ public class PunchManager : MonoBehaviour
 
         if (layerName == "Opponent")
         {
-            TypeInducedBehaviour(collision);
             GetDistanceToCenter(collision);
         }
     }
 
-    private void TypeInducedBehaviour(Collision collision)
+    /*private void TypeInducedBehaviour(Collision collision)
     {
         switch (collision.gameObject.tag)
         {
@@ -40,7 +43,15 @@ public class PunchManager : MonoBehaviour
 
                 if (Vector3.Angle(transform.position - _previousPosition, hitZone.up) > 70)
                 {
-                    Debug.Log("You punch real good !");
+                    if (GetDistanceToCenter(collision) < 5.0f)
+                    {
+                        Debug.Log("You punch real good !");
+                        _spawner.ResetObj(collision.gameObject);
+                    }
+                    else
+                    {
+                        Debug.Log("You punch good !");
+                    }
                     _spawner.ResetObj(collision.gameObject);
                 }
                 _previousPosition = transform.position;
@@ -59,7 +70,7 @@ public class PunchManager : MonoBehaviour
                 }
                 break;
         }
-    }
+    }*/
 
     public float GetDistanceToCenter(Collision collision)
     {
@@ -67,6 +78,8 @@ public class PunchManager : MonoBehaviour
         Vector3 center = collision.transform.position;
         Vector3 point = contact.point;
         DistanceToCenter = Vector3.Distance(center, point);
+
+        //Debug.Log(DistanceToCenter);
 
         return DistanceToCenter;
 
