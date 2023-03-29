@@ -19,7 +19,7 @@ public class PlayerCounterManager : MonoBehaviour
         if (other.gameObject == _rightHand)
         {
             _hasCounterPosition = true;
-            //Debug.Log("Counter !");
+            Debug.Log("Counter !");
         }
     }
 
@@ -28,7 +28,7 @@ public class PlayerCounterManager : MonoBehaviour
         if (other.gameObject == _rightHand)
         {
             _hasCounterPosition = false;
-            //Debug.Log("No counter !");
+            Debug.Log("No counter !");
         }
     }
 

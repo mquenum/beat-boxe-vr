@@ -10,12 +10,12 @@ public class PlayOnCollision : MonoBehaviour
 
     private void Start()
     {
-        _collisionManager = PunchManager.SharedInstance;
+        //_collisionManager = PunchManager.SharedInstance;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (_collisionManager.DistanceToCenter <= 0.1)
+        /*if (_collisionManager.DistanceToCenter <= 0.1)
         {
             _audioSource.clip = _soundClipManager._audioClips[1];
         }
@@ -24,6 +24,6 @@ public class PlayOnCollision : MonoBehaviour
             _audioSource.clip = _soundClipManager._audioClips[0];
         }
 
-        _audioSource.Play();
+        _audioSource.Play();*/
     }
 }

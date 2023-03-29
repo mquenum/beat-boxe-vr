@@ -33,7 +33,7 @@ public class ScoreManager : MonoBehaviour
     }
 
     // add points
-    public void ScoreUp(int point, bool isPerfect)
+    public void ScoreUp(int point)
     {
         _hitCounter++;
         _combo++;
