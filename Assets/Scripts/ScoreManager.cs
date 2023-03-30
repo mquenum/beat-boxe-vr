@@ -8,12 +8,15 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager SharedInstance;
     [SerializeField] private TMP_Text _scoreDisplayer;
+    [SerializeField] private CameraShake _cameraShake;
+
     private string _scoreText;
     private int _scoreVal;
     private int _hitCounter;
     private int _combo;
     private int _miss;
     private Vibrate _vibrate;
+
 
     private void Awake()
     {
@@ -56,8 +59,8 @@ public class ScoreManager : MonoBehaviour
         if (_scoreVal > 0) { _scoreVal -= damage; }
         _miss++;
 
-        _vibrate.VibrateControllers(0.9f, 0.5f);
-
+        _vibrate.VibrateControllers(0.9f, 0.25f);
+        _cameraShake.ShakeCamera(0.25f, 0.07f);
         ScoreTextUpdate(_scoreVal);
     }
 
