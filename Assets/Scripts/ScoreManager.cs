@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using TMPro;
 using UnityEngine;
 
@@ -11,6 +12,8 @@ public class ScoreManager : MonoBehaviour
     private int _scoreVal;
     private int _hitCounter;
     private int _combo;
+    private int _miss;
+    private Vibrate _vibrate;
 
     private void Awake()
     {
@@ -22,6 +25,7 @@ public class ScoreManager : MonoBehaviour
     {
         ResetCounters();
         ScoreTextUpdate(_scoreVal);
+        _vibrate = Vibrate.SharedInstance;
     }
 
     // set default values
@@ -30,6 +34,7 @@ public class ScoreManager : MonoBehaviour
         _hitCounter = 0;
         _combo = 0;
         _scoreVal = 0;
+        _miss = 0;
     }
 
     // add points
@@ -38,24 +43,28 @@ public class ScoreManager : MonoBehaviour
         _hitCounter++;
         _combo++;
         _scoreVal += point;
-        _scoreVal = _scoreVal * _combo;
+
+        _vibrate.VibrateControllers(0.5f, 0.1f);
+
         ScoreTextUpdate(_scoreVal);
     }
 
     // remove points in case of miss ro contact
-    public void ScoreDown(int damage)
+    public void ScoreDown(int damage, int combo)
     {
-        if (_combo > 0)
-        {
-            _combo--;
-        }
+        if (_combo > 0) { _combo -= combo; }
+        if (_scoreVal > 0) { _scoreVal -= damage; }
+        _miss++;
+
+        _vibrate.VibrateControllers(0.9f, 0.5f);
+
         ScoreTextUpdate(_scoreVal);
     }
 
     // update the score dipslay
     private void ScoreTextUpdate(int score)
     {
-        _scoreText = $"Score: {score.ToString()}, nb of hits: {_hitCounter}, combo: {_combo}";
+        _scoreText = $"Score: {score.ToString()}, nb of hits: {_hitCounter}, combo: {_combo}, misses: {_miss}";
         _scoreDisplayer.text = _scoreText;
     }
 }

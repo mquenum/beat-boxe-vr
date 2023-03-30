@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR;
 
 public class PlayerCounterManager : MonoBehaviour
 {
@@ -19,7 +16,6 @@ public class PlayerCounterManager : MonoBehaviour
         if (other.gameObject == _rightHand)
         {
             _hasCounterPosition = true;
-            Debug.Log("Counter !");
         }
     }
 
@@ -28,7 +24,6 @@ public class PlayerCounterManager : MonoBehaviour
         if (other.gameObject == _rightHand)
         {
             _hasCounterPosition = false;
-            Debug.Log("No counter !");
         }
     }
 

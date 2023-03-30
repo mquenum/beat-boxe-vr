@@ -9,11 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 335260690553505919}
-  - component: {fileID: 1153554361341418969}
   - component: {fileID: -2729162449186018925}
   - component: {fileID: 5422805593891600415}
   - component: {fileID: 2559588929894405939}
   - component: {fileID: -2435110144051897390}
+  - component: {fileID: 3866395344822714557}
+  - component: {fileID: -3836590522308796113}
   m_Layer: 7
   m_Name: Counter
   m_TagString: Counter
@@ -38,22 +39,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1153554361341418969
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335260690553505918}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 118
-  m_CollisionDetection: 2
 --- !u!114 &-2729162449186018925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68cd08d8345b10a4186890c59a43b581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _force: 0.5
+  _force: 3
 --- !u!65 &5422805593891600415
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -189,6 +174,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7234c4a293266241b63cffd2456988a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &3866395344822714557
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335260690553505918}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 118
+  m_CollisionDetection: 3
+--- !u!114 &-3836590522308796113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335260690553505918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139a45209710e944cb88c4d5642cf425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftControllerNode: 4
+  rightControllerNode: 5
+  vibrationDuration: 0.1
+  vibrationAmplitude: 0.5
 --- !u!1001 &335260690207629476
 PrefabInstance:
   m_ObjectHideFlags: 0
