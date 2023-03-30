@@ -797,11 +797,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1475262761, guid: 872b1ae3c534c444db0acafca7ed05e5, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1475262762, guid: 872b1ae3c534c444db0acafca7ed05e5, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1475262764, guid: 872b1ae3c534c444db0acafca7ed05e5, type: 3}
       propertyPath: m_RequestedTrackingOriginMode

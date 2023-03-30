@@ -20,9 +20,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/01-LevelOne - Pool-Spawner-Player.unity
     guid: 5fe931fda175dec42a9964cf8da881a9
-  - enabled: 0
-    path: Assets/Scenes/01-LevelOne - UI.unity
-    guid: 24e835f97ecb747408e8ec6c20ecde20
+  - enabled: 1
+    path: Assets/Scenes/00-MainMenu - Main.unity
+    guid: d2b8e389b21b88240837ac5fb1a0e13b
+  - enabled: 1
+    path: Assets/Scenes/00-MainMenu - UI.unity
+    guid: 5a91f430447475c4b89a8a4a54908464
+  - enabled: 1
+    path: Assets/Scenes/00-MainMenu - Player.unity
+    guid: 962352251a34b394f8a7fbcdfe05454f
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 6ecf28bfc5a06e54dacaf4c4b68c9e2b,
       type: 2}
