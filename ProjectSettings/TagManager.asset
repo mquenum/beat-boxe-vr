@@ -11,6 +11,7 @@ TagManager:
   - Counter
   - CounterDetect
   - Spawner
+  - AudioClips
   layers:
   - Default
   - TransparentFX

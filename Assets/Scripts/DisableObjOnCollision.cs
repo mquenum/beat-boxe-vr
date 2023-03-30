@@ -5,6 +5,12 @@ using UnityEngine;
 public class DisableObjOnCollision : MonoBehaviour
 {
     [SerializeField] private Spawner _spawner;
+    private ScoreManager _score;
+
+    private void Start()
+    {
+        _score = ScoreManager.SharedInstance;
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -14,6 +20,7 @@ public class DisableObjOnCollision : MonoBehaviour
 
         if (layerName == "Opponent")
         {
+            _score.ScoreDown(1);
             _spawner.ResetObj(collision.gameObject);
         }
     }
