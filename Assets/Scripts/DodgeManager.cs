@@ -2,18 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CounterManager : MonoBehaviour
+public class DodgeManager : MonoBehaviour
 {
     private ScoreManager _score;
     private GameObject _spawnerGO;
-    private PlayerCounterManager _playerHandsPosition;
     private GameObject _objAudioManager;
     private AudioSource _audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
-        _playerHandsPosition = PlayerCounterManager.SharedInstance;
         _spawnerGO = GameObject.FindGameObjectWithTag("Spawner");
         _objAudioManager = GameObject.FindGameObjectWithTag("AudioClips");
         _audioSource = _objAudioManager.GetComponent<AudioSource>();
@@ -22,7 +20,7 @@ public class CounterManager : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player") && _playerHandsPosition)
+        if (collision.gameObject.CompareTag("Player"))
         {
             Spawner spawner = _spawnerGO.GetComponent<Spawner>();
             SoundClipManager clips = _objAudioManager.GetComponent<SoundClipManager>();
@@ -32,9 +30,9 @@ public class CounterManager : MonoBehaviour
             rb.angularVelocity = Vector3.zero;
             rb.isKinematic = true;
 
-            _audioSource.clip = clips._audioClips[1];
+            _audioSource.clip = clips._audioClips[2];
             _audioSource.Play();
-            _score.ScoreUp(1);
+            _score.ScoreDown(1, 2);
             spawner.ResetObj(gameObject);
         }
     }

@@ -18,10 +18,19 @@ public class DisableObjOnCollision : MonoBehaviour
         // Get the layer name from the layer mask
         string layerName = LayerMask.LayerToName(layer);
 
+
         if (layerName == "Opponent")
         {
-            _score.ScoreDown(1);
-            _spawner.ResetObj(collision.gameObject);
+            if (!collision.gameObject.CompareTag("Dodge"))
+            {
+                _score.ScoreDown(1, 1);
+            }
+            else
+            {
+                _score.ScoreUp(1);
+            }
         }
+
+        _spawner.ResetObj(collision.gameObject);
     }
 }

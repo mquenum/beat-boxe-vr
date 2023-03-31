@@ -9,14 +9,24 @@ public class ObjectController : MonoBehaviour
     [SerializeField] private float _force = 1.0f;
     private Rigidbody _rb;
     private bool _isActive = false;
+    private GameObject _spawnerGO;
+    private string _objectTag;
+    private AudioSource _audioSource;
+    private GameObject _objAudioManager;
+    private Vector3 _size;
 
     void OnEnable()
     {
         if (_isActive)
         {
+            _objectTag = gameObject.transform.tag;
+            _objAudioManager = GameObject.FindGameObjectWithTag("AudioClips");
+            _audioSource = _objAudioManager.GetComponent<AudioSource>();
+            _size = GetComponent<BoxCollider>().size;
             _rb = gameObject.GetComponent<Rigidbody>();
             _rb.isKinematic = false;
-            StartCoroutine(MoveForward(_rb));
+            StartCoroutine(MoveForward());
+            _spawnerGO = GameObject.FindGameObjectWithTag("Spawner");
         }
         else
         {
@@ -24,11 +34,13 @@ public class ObjectController : MonoBehaviour
         }
     }
 
-    IEnumerator MoveForward(Rigidbody rb)
+    IEnumerator MoveForward()
     {
         while (true)
         {
-            rb.AddForce(0, 0, _force*-1);
+            Vector3 movement = -Vector3.forward * _force * Time.deltaTime;
+            _rb.MovePosition(transform.position + movement);
+
             yield return null;
         }
     }

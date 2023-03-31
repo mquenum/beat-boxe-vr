@@ -8,14 +8,12 @@ public class RotatingObstacleCollision : MonoBehaviour
     private GameObject _spawnerGO;
     private AudioSource _audioSource;
     private GameObject _objAudioManager;
-    private Vector3 _size;
 
     private void Start()
     {
         _spawnerGO = GameObject.FindGameObjectWithTag("Spawner");
         _objAudioManager = GameObject.FindGameObjectWithTag("AudioClips");
         _audioSource = _objAudioManager.GetComponent<AudioSource>();
-        _size = GetComponent<BoxCollider>().size;
         _score = ScoreManager.SharedInstance;
     }
 
